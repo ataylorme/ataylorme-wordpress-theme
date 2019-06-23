@@ -1,6 +1,6 @@
 {
-  "name": "wprig/wprig",
-  "description": "A progressive theme development rig for WordPress.",
+  "name": "ataylorme/ataylorme-wordpress-theme",
+  "description": "WordPress theme for ataylor.me",
   "type": "wordpress-theme",
   "license": "GPL-2.0",
   "require-dev": {
@@ -13,7 +13,7 @@
   },
   "config": {
     "platform": {
-      "php": "7.0"
+      "php": "7.3"
     }
   },
   "autoload": {
