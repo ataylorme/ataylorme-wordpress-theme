@@ -152,6 +152,7 @@
 }
 
 @media (--narrow-menu-query) {
+
 	.entry-content ul,
 	.entry-content ol {
 		padding-left: 1em;

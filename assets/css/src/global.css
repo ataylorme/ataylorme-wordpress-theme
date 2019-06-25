@@ -630,7 +630,7 @@ select {
 	}
 
 	.nav-links .nav-previous,
- .nav-links .nav-next {
+	.nav-links .nav-next {
 		display: inline-block;
 		text-align: left;
 		width: 100%;
