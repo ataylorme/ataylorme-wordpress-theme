@@ -698,6 +698,23 @@ select {
 	text-align: center;
 }
 
+@media (--narrow-menu-query) {
+	.site-info {
+		margin: 1em;
+		max-width: 100%;
+	}
+
+	.site-footer .sep {
+		display: block;
+		clear: both;
+		content: "";
+		width: 100%;
+		height: 0px;
+		margin: 0.5em 0;
+		overflow: hidden;
+	}
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
