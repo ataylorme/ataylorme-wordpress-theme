@@ -35,6 +35,44 @@
 	text-overflow: ellipsis;
 }
 
+.widget li {
+	padding: 0.5em 0;
+}
+
+/* Tag cloud widget */
+.tagcloud {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1rem;
+	justify-content: space-around;
+}
+
+@media (--narrow-menu-query) {
+	.tagcloud {
+		grid-template-columns: 1fr;
+	}
+}
+
+.tagcloud a {
+	display: block;
+}
+
+.tagcloud a:nth-of-type(even) {
+	transform: rotateY(33deg);
+}
+
+.tagcloud a:nth-of-type(odd) {
+	transform: rotateY(-33deg);
+}
+
+/* Latest posts widget */
+.widget_recent_entries .post-date {
+	display: block;
+	margin-top: 0.25em;
+	font-size: 0.75em;
+	color: var(--color-theme-grey);
+}
+
 /* Archive and Categories widgets */
 .widget_archive li {
 	color: #7d7d7d;

@@ -685,6 +685,19 @@ select {
 	text-align: center;
 }
 
+.footer-sidebar {
+	max-width: var(--content-width);
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-gap: 2rem;
+	justify-content: center;
+}
+
+.footer-sidebar .widget-title {
+	text-align: center;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

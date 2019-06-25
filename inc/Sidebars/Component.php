@@ -28,6 +28,7 @@ use function dynamic_sidebar;
 class Component implements Component_Interface, Templating_Component_Interface {
 
 	const PRIMARY_SIDEBAR_SLUG = 'sidebar-1';
+	const FOOTER_SIDEBAR_SLUG = 'sidebar-2';
 
 	/**
 	 * Gets the unique identifier for the theme component.
@@ -57,6 +58,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		return [
 			'is_primary_sidebar_active' => [ $this, 'is_primary_sidebar_active' ],
 			'display_primary_sidebar'   => [ $this, 'display_primary_sidebar' ],
+			'is_footer_sidebar_active'  => [ $this, 'is_footer_sidebar_active' ],
+			'display_footer_sidebar'    => [ $this, 'display_footer_sidebar' ],
 		];
 	}
 
@@ -68,6 +71,17 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			[
 				'name'          => esc_html__( 'Sidebar', 'wp-rig' ),
 				'id'            => static::PRIMARY_SIDEBAR_SLUG,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			]
+		);
+		register_sidebar(
+			[
+				'name'          => esc_html__( 'Footer Widgets', 'wp-rig' ),
+				'id'            => static::FOOTER_SIDEBAR_SLUG,
 				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
@@ -109,5 +123,21 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function display_primary_sidebar() {
 		dynamic_sidebar( static::PRIMARY_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Checks whether the footer sidebar is active.
+	 *
+	 * @return bool True if the footer sidebar is active, false otherwise.
+	 */
+	public function is_footer_sidebar_active() : bool {
+		return (bool) is_active_sidebar( static::FOOTER_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Displays the footer sidebar.
+	 */
+	public function display_footer_sidebar() {
+		dynamic_sidebar( static::FOOTER_SIDEBAR_SLUG );
 	}
 }
