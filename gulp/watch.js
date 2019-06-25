@@ -43,7 +43,7 @@ export default function watch() {
 		});
 	}
 
-	gulpWatch(backslashToForwardSlash(paths.styles.src[0]), series( styles, editorStyles, reload ) );
+	gulpWatch(backslashToForwardSlash(paths.styles.src[0]), series( styles, editorStyles ) );
 
 	gulpWatch(backslashToForwardSlash(paths.scripts.src[0]), series(scripts, reload));
 
