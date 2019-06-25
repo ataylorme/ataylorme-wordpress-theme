@@ -102,6 +102,8 @@
     "translate": "gulp translate",
     "test-gulp": "jest gulp/tests",
     "lint": "eslint assets/js/src/",
-    "lint-gulp": "eslint gulp/"
+    "lint-gulp": "eslint gulp/",
+    "style-lint": "stylelint assets/css/src/",
+    "style-lint-fix": "stylelint --fix assets/css/src/"
   }
 }
