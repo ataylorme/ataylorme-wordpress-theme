@@ -199,7 +199,26 @@ select {
 --------------------------------------------------------------*/
 
 .site-header {
-	padding-bottom: 1em;
+	position: relative;
+	z-index: 10;
+	background: var(--color-theme-primary);
+	margin: 0 -1em;
+}
+
+.site-header .inner {
+	max-width: var(--content-width);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+@media (--narrow-menu-query) {
+	.site-header .inner {
+		flex-direction: column;
+		align-items: center;
+		padding: 0.5em 0;
+	}
 }
 
 .header-image {
@@ -258,9 +277,11 @@ select {
 	font-stretch: condensed;
 	font-size: 80%;
 	text-transform: uppercase;
-	border: 2px solid #000;
+	border: 1px solid var(--color-theme-white);
 	border-radius: 0;
 	background: transparent;
+	color: var(--color-theme-white);
+	outline: none;
 }
 
 .nav--toggle-small .menu {
@@ -276,6 +297,12 @@ select {
 
 	.nav--toggle-small.nav--toggled-on .menu {
 		display: block;
+	}
+	.nav--toggle-small .menu-toggle {
+		margin: 1em auto 0 auto;
+	}
+	.nav--toggle-small.nav--toggled-on .menu-toggle {
+		margin-bottom: 1em;
 	}
 }
 
@@ -294,7 +321,7 @@ select {
 		position: absolute;
 		top: 100%;
 		flex-direction: column;
-		background: #fff;
+		background: var(--color-theme-blue);
 		margin-left: 0;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 		z-index: 1;
@@ -317,6 +344,7 @@ select {
 		border-radius: 0;
 		transform: translateY(-50%);
 		overflow: visible;
+		opacity: 0.75;
 	}
 
 	.nav--toggle-sub .dropdown-symbol {
@@ -327,7 +355,7 @@ select {
 		top: 35%;
 		width: 60%;
 		height: 60%;
-		border: solid #000;
+		border: solid var(--color-theme-white);
 		border-width: 0 2px 2px 0;
 		transform: translateY(-50%) rotate(45deg);
 	}
@@ -383,11 +411,19 @@ select {
 .main-navigation {
 	clear: both;
 	display: block;
-	margin: 0 auto 2em;
-	padding: 0 1em;
+	margin: 0;
+	padding: 0;
 	max-width: var(--content-width);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
+	background-color: var(--color-theme-primary);
+}
+
+@media (--narrow-menu-query) {
+	.main-navigation {
+		width: 100%;
+		order: 2;
+	}
 }
 
 .main-navigation a {
@@ -395,7 +431,7 @@ select {
 	width: 100%;
 	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
-	color: #000;
+	color: var(--color-theme-white);
 }
 
 .main-navigation a:hover,
@@ -455,6 +491,78 @@ select {
 		flex-wrap: wrap;
 		justify-content: center;
 	}
+}
+
+.primary-menu-container > ul > li > a {
+	display: flex;
+	align-items: center;
+	padding: 0 .5rem;
+	text-decoration: none;
+	color: var(--color-theme-white);
+	opacity: .75;
+	transition: all .4s;
+	border-bottom: 1px solid transparent;
+	font-size: 24px;
+	line-height: 3rem;
+	text-align: center;
+}
+
+@media (--narrow-menu-query) {
+	.primary-menu-container > ul > li > a {
+		border-top: solid 1px var(--color-theme-white);
+		opacity: 1;
+	}
+}
+
+.primary-menu-container > ul > li > a:hover, .primary-menu-container > ul > li > a:active, .primary-menu-container > ul > li > a:focus {
+	border-bottom: solid 1px var(--color-theme-white);
+	opacity: 1;
+	text-decoration: none;
+}
+
+.primary-menu-container > ul > li:hover > a, .primary-menu-container > ul > li:hover > .dropdown-toggle {
+	opacity: 1;
+	text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Social navigation
+--------------------------------------------------------------*/
+.social-navigation {
+	display: flex;
+	flex-direction: row;
+}
+
+@media (--narrow-menu-query) {
+	.social-navigation {
+		order: 1;
+	}
+}
+
+.social-navigation a {
+	display: flex;
+	align-items: center;
+	padding: 0 .5rem;
+	color: var(--color-theme-white);
+	text-decoration: none;
+	opacity: .75;
+	transition: all .4s;
+	border-bottom: 1px solid transparent;
+	line-height: 3rem;
+}
+
+.social-navigation a:hover, .social-navigation a:active, .social-navigation a:focus {
+	border-bottom: solid 1px var(--color-theme-white);
+	opacity: 1;
+	text-decoration: none;
+}
+
+.social-navigation svg {
+	fill: currentColor;
+	opacity: 1;
+	width: 35px;
+	height: 35px;
+	vertical-align: middle;
 }
 
 /*--------------------------------------------------------------
