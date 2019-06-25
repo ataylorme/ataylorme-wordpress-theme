@@ -83,6 +83,46 @@
 	max-width: var(--content-width);
 }
 
+.single-post .entry-header {
+	margin: 0 0 1em 0;
+	max-width: none;
+	text-align: center;
+	padding: 0;
+}
+
+.single-post .entry-header h1 {
+	margin: 0;
+	max-width: none;
+	line-height: 1.1em;
+}
+
+.single-post .entry-header a {
+	color: var(--color-theme-white);
+}
+
+.single-post .entry-header .entry-meta,
+ .single-post .entry-header .entry-footer {
+	max-width: none;
+	margin: 1em auto;
+}
+
+@media (--narrow-menu-query) {
+
+	.single-post .entry-header .entry-taxonomies > span {
+		display: block;
+		margin-bottom: 1em;
+	}
+
+	.single-post .entry-header .entry-taxonomies > span:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.single-post .entry-header .entry-footer {
+	margin: 0;
+	padding: 0;
+}
+
 @media (--content-query) {
 
 	.page-content > *,
