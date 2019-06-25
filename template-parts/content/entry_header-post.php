@@ -7,9 +7,13 @@
 
 namespace WP_Rig\WP_Rig;
 
+$div_class = 'entry-header';
+if ( has_post_thumbnail() ) {
+	$div_class .= ' cover';
+}
 ?>
 
-<header class="entry-header">
+<header class="<?php echo esc_attr( $div_class ); ?>">
 	<?php
 	if ( has_post_thumbnail() && is_singular() ) {
 		$thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
