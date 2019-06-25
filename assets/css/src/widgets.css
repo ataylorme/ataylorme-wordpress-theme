@@ -15,6 +15,7 @@
 
 .widget li {
 	line-height: 1.8;
+	padding: 0.5em 0;
 }
 
 .widget_archive ul,
@@ -35,10 +36,6 @@
 	text-overflow: ellipsis;
 }
 
-.widget li {
-	padding: 0.5em 0;
-}
-
 /* Tag cloud widget */
 .tagcloud {
 	display: grid;
@@ -48,6 +45,7 @@
 }
 
 @media (--narrow-menu-query) {
+
 	.tagcloud {
 		grid-template-columns: 1fr;
 	}
