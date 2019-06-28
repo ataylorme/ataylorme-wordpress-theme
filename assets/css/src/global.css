@@ -743,6 +743,14 @@ select {
 		margin: 0.5em 0;
 		overflow: hidden;
 	}
+
+	.footer-sidebar {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.footer-sidebar ul {
+		margin-left: 0;
+	}
 }
 
 /*--------------------------------------------------------------
