@@ -95,6 +95,10 @@
 	margin-left: 0;
 }
 
+.wp-block-column > h2 {
+	margin-left: 1em;
+}
+
 .wp-block-latest-posts,
 .wp-block-latest-comments {
 	padding: 1.5em 1em;
