@@ -62,6 +62,12 @@
 	overflow-wrap: break-word;
 }
 
+@media (--content-query) {
+    .entry-content, .entry-footer, .post-navigation, .page-header, .entry {
+        --content-width: 50rem;
+    }
+}
+
 .page-content > *,
 .entry-content > *,
 .entry-summary > * {
@@ -150,6 +156,16 @@
 	padding-left: 2.5em;
 	max-width: var(--content-width);
 	margin: 0 auto;
+}
+
+.entry-content ul.alignwide,
+.entry-content ol.alignwide {
+	max-width: calc(var(--content-width) + 25%);
+}
+
+.entry-content ul.alignfull,
+.entry-content ol.alignfull {
+	max-width: none;
 }
 
 @media (--narrow-menu-query) {

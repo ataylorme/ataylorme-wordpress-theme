@@ -723,6 +723,12 @@ select {
 	justify-content: center;
 }
 
+@media (--content-query) {
+	.footer-sidebar {
+		--content-width: 50rem;
+	}
+}
+
 .footer-sidebar .widget-title {
 	text-align: center;
 }
