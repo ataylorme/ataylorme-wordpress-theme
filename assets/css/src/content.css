@@ -59,6 +59,7 @@
 
 .entry-content {
 	margin: 0;
+	overflow-wrap: break-word;
 }
 
 .page-content > *,
