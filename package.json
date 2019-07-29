@@ -14,7 +14,7 @@
     "url": "https://github.com/ataylorme/ataylorme-wordpress-theme/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
+    "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.4",
     "@babel/register": "^7.4.0",
     "@wordpress/eslint-plugin": "^2.3.0",
