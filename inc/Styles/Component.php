@@ -322,10 +322,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		 * Filters default CSS files.
 		 *
 		 * @param array $css_files Associative array of CSS files, as $handle => $data pairs.
-		 *                         $data must be an array with keys 'file' (file path relative to 'assets/css'
-		 *                         directory), and optionally 'global' (whether the file should immediately be
-		 *                         enqueued instead of just being registered) and 'preload_callback' (callback)
-		 *                         function determining whether the file should be preloaded for the current request).
+		 * $data must be an array with keys 'file' (file path relative to 'assets/css'
+		 * directory), and optionally 'global' (whether the file should immediately be
+		 * enqueued instead of just being registered) and 'preload_callback' (callback)
+		 * function determining whether the file should be preloaded for the current request).
 		 */
 		$css_files = apply_filters( 'wp_rig_css_files', $css_files );
 
