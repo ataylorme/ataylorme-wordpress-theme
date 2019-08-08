@@ -62,12 +62,6 @@
 	overflow-wrap: break-word;
 }
 
-@media (--content-query) {
-    .entry-content, .entry-footer, .post-navigation, .page-header, .entry {
-        --content-width: 50rem;
-    }
-}
-
 .page-content > *,
 .entry-content > *,
 .entry-summary > * {

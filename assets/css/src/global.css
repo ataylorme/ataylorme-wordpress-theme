@@ -105,6 +105,18 @@
 	}
 }
 
+@media (--content-query) {
+
+	.entry-content,
+	.entry-footer,
+	.post-navigation,
+	.page-header,
+	.entry,
+	.comments-area {
+		--content-width: 50rem;
+	}
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -724,6 +736,7 @@ select {
 }
 
 @media (--content-query) {
+
 	.footer-sidebar {
 		--content-width: 50rem;
 	}

@@ -1,6 +1,9 @@
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
+.comments-area {
+	padding: 0;
+}
 
 .comment-content a {
 	word-wrap: break-word;
@@ -138,6 +141,17 @@
 .reply {
 	margin-bottom: 1.5em;
 	text-align: right;
+}
+
+.comment-form input:not([type="submit"]),
+.comment-form textarea {
+	width: 100%;
+}
+
+.comment-form input[type="submit"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .comment-reply-link,
