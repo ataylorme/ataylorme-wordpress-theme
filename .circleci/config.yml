@@ -31,6 +31,14 @@ jobs:
           command: composer install --no-ansi --no-interaction --optimize-autoloader --no-progress
 
       - run:
+          name: Tests PHP coding standards
+          command: composer run-phpcs
+
+      - run:
+          name: Run PHP unit tests
+          command: composer phpunit-dev
+
+      - run:
           name: install Node dependencies
           command: npm ci
 
