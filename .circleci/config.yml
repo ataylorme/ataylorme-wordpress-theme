@@ -39,6 +39,10 @@ jobs:
           command: npm run lint:gulp
 
       - run:
+          name: Run the dev build
+          command: npm run build
+
+      - run:
           name: Run gulp tests
           command: npm run test:gulp
 
