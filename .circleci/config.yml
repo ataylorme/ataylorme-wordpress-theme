@@ -10,7 +10,7 @@ version: 2
 
 jobs:
 
-  test_gulp:
+  test_all:
     <<: *defaults
 
     steps:
@@ -68,4 +68,4 @@ workflows:
   version: 2
   test:
     jobs:
-      - test_gulp
+      - test_all
