@@ -50,7 +50,11 @@ export function stylesAfterReplacementStream() {
 	const config = getThemeConfig();
 
 	const postcssPlugins = [
-		stylelint(),
+		stylelint( {
+			rules: {
+				'no-descending-specificity': null,
+			},
+		} ),
 		postcssPresetEnv( {
 			importFrom: (
 				configValueDefined( 'config.dev.styles.importFrom' ) ?

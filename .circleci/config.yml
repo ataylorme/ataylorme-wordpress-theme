@@ -47,6 +47,10 @@ jobs:
           command: npm run lint:gulp
 
       - run:
+          name: Run style linting
+          command: npm run lint:style
+
+      - run:
           name: Run the dev build
           command: npm run build
 
@@ -55,7 +59,7 @@ jobs:
           command: npm run test:gulp
 
       - save_cache:
-          key: main-vendor-{{ checksum "composer.lock" }}
+          key: vendor-{{ checksum "composer.lock" }}
           paths:
             - vendor
 
