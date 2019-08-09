@@ -10,7 +10,7 @@ version: 2
 
 jobs:
 
-  test_gulp:
+  test_all:
     <<: *defaults
 
     steps:
@@ -31,12 +31,24 @@ jobs:
           command: composer install --no-ansi --no-interaction --optimize-autoloader --no-progress
 
       - run:
+          name: Tests PHP coding standards
+          command: composer run-phpcs
+
+      - run:
+          name: Run PHP unit tests
+          command: composer phpunit-dev
+
+      - run:
           name: install Node dependencies
           command: npm ci
 
       - run:
           name: Run gulp linting
           command: npm run lint:gulp
+
+      - run:
+          name: Run the dev build
+          command: npm run build
 
       - run:
           name: Run gulp tests
@@ -56,4 +68,4 @@ workflows:
   version: 2
   test:
     jobs:
-      - test_gulp
+      - test_all

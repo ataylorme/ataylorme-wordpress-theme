@@ -3,11 +3,14 @@
   "description": "WordPress theme for ataylor.me",
   "type": "wordpress-theme",
   "license": "GPL-2.0",
+  "require" : {
+    "php" : ">=7.2"
+  },
   "require-dev": {
     "php": ">=7.0",
     "wp-coding-standards/wpcs": "^2",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.5",
-    "phpunit/phpunit": "^6",
+    "phpunit/phpunit": "^8",
     "brain/monkey": "^2",
     "phpcompatibility/php-compatibility": "^9"
   },
