@@ -18,7 +18,7 @@
     "@babel/preset-env": "^7.5.4",
     "@babel/register": "^7.4.0",
     "@wordpress/eslint-plugin": "^2.3.0",
-    "ajv": "^6.10.0",
+    "ajv": "^6.10.2",
     "ansi-colors": "^3.2.4",
     "autoprefixer": "^9.5.1",
     "babel-jest": "^24.7.1",
