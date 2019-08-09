@@ -59,7 +59,7 @@ jobs:
           command: npm run test:gulp
 
       - save_cache:
-          key: main-vendor-{{ checksum "composer.lock" }}
+          key: vendor-{{ checksum "composer.lock" }}
           paths:
             - vendor
 
