@@ -259,7 +259,7 @@ select {
 	font-stretch: condensed;
 	font-size: 38px;
 	font-weight: 700;
-	line-height: 1.2rem;
+	line-height: 1.2;
 	color: #333332;
 }
 
@@ -274,7 +274,7 @@ select {
 	font-stretch: condensed;
 	font-size: 17px;
 	font-weight: inherit;
-	line-height: 1.4rem;
+	line-height: 1.4;
 	word-wrap: break-word;
 	color: #757575;
 }
@@ -450,6 +450,18 @@ select {
 	color: var(--color-theme-white);
 }
 
+.social-navigation a {
+	display: flex;
+	align-items: center;
+	padding: 0 0.5rem;
+	color: var(--color-theme-white);
+	text-decoration: none;
+	opacity: 0.75;
+	transition: all 0.4s;
+	border-bottom: 1px solid transparent;
+	line-height: 1.25;
+}
+
 .primary-menu-container > ul > li > a {
 	display: flex;
 	align-items: center;
@@ -460,8 +472,26 @@ select {
 	transition: all 0.4s;
 	border-bottom: 1px solid transparent;
 	font-size: 24px;
-	line-height: 3rem;
+	line-height: 3;
 	text-align: center;
+}
+
+.social-navigation a:hover,
+.social-navigation a:active,
+.social-navigation a:focus {
+	border-bottom: solid 1px var(--color-theme-white);
+	opacity: 1;
+	text-decoration: none;
+}
+
+.pagination a:hover,
+.pagination a:focus,
+.pagination a:active {
+	border-color: #00a0d2;
+}
+
+.pagination a:visited {
+	color: var(--color-link);
 }
 
 @media (--narrow-menu-query) {
@@ -560,26 +590,6 @@ select {
 	}
 }
 
-.social-navigation a {
-	display: flex;
-	align-items: center;
-	padding: 0 0.5rem;
-	color: var(--color-theme-white);
-	text-decoration: none;
-	opacity: 0.75;
-	transition: all 0.4s;
-	border-bottom: 1px solid transparent;
-	line-height: 3rem;
-}
-
-.social-navigation a:hover,
-.social-navigation a:active,
-.social-navigation a:focus {
-	border-bottom: solid 1px var(--color-theme-white);
-	opacity: 1;
-	text-decoration: none;
-}
-
 .social-navigation svg {
 	fill: currentColor;
 	opacity: 1;
@@ -672,19 +682,9 @@ select {
 	margin-right: 1em;
 	border: 1px solid var(--color-link);
 	min-width: 1.75em;
-	line-height: 1.75rem;
+	line-height: 1.75;
 	text-align: center;
 	text-decoration: none;
-}
-
-.pagination a:visited {
-	color: var(--color-link);
-}
-
-.pagination a:hover,
-.pagination a:focus,
-.pagination a:active {
-	border-color: #00a0d2;
 }
 
 .pagination .prev,

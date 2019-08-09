@@ -47,6 +47,10 @@ jobs:
           command: npm run lint:gulp
 
       - run:
+          name: Run style linting
+          command: npm run lint:style
+
+      - run:
           name: Run the dev build
           command: npm run build
 

@@ -55,6 +55,14 @@
 	display: block;
 }
 
+.widget_pages a,
+.widget_nav_menu a {
+	display: block;
+	padding: 0.6em 0;
+	text-decoration: none;
+	border-bottom: 1px dashed #808080;
+}
+
 .tagcloud a:nth-of-type(even) {
 	transform: rotateY(33deg);
 }
@@ -90,14 +98,6 @@
 .widget_nav_menu .sub-menu {
 	padding-top: 0;
 	padding-bottom: 0.5em;
-}
-
-.widget_pages a,
-.widget_nav_menu a {
-	display: block;
-	padding: 0.6em 0;
-	text-decoration: none;
-	border-bottom: 1px dashed #808080;
 }
 
 .widget_pages a:hover,
