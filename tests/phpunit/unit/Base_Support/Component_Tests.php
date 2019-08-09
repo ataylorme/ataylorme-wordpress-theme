@@ -31,8 +31,7 @@ class Component_Tests extends Unit_Test_Case {
 	 *
 	 * @return void
 	 */
-	public function setUp(): void
-	{
+	public function setUp(): void {
 		parent::setUp();
 
 		$this->component = new Component();

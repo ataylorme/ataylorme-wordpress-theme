@@ -21,8 +21,7 @@ class Unit_Test_Case extends TestCase {
 	 *
 	 * @return void
 	 */
-	protected function setUp() : void
-	{
+	protected function setUp() : void {
 		parent::setUp();
 		Monkey\setUp();
 
@@ -67,8 +66,7 @@ class Unit_Test_Case extends TestCase {
 	/**
 	 * Tears down the environment after each test.
 	 */
-	protected function tearDown(): void
-	{
+	protected function tearDown(): void {
 		Monkey\tearDown();
 		parent::tearDown();
 	}
