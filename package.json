@@ -57,7 +57,7 @@
     "gulp-tabify": "0.0.2",
     "gulp-uglify": "^3.0.2",
     "gulp-wp-pot": "^2.3.5",
-    "gulp-zip": "^4.2.0",
+    "gulp-zip": "^5.0.0",
     "import-fresh": "^3.0.0",
     "jest": "^24.8.0",
     "jest-expect-message": "^1.0.2",
