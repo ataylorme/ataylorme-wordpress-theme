@@ -1,0 +1,59 @@
+defaults: &defaults
+  docker:
+    - image: quay.io/pantheon-public/build-tools-ci:6.x
+  working_directory: ~/ataylorme-wordpress-theme
+  environment:
+    TZ: "/usr/share/zoneinfo/America/Los_Angeles"
+    TERM: dumb
+
+version: 2
+
+jobs:
+
+  test_gulp:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - vendor-{{ checksum "composer.lock" }}
+            - vendor-
+
+      - restore_cache:
+          keys:
+            - node-modules-{{ checksum "package-lock.json" }}
+            - node-modules-
+
+      - run:
+          name: install PHP dependencies
+          command: composer install --no-ansi --no-interaction --optimize-autoloader --no-progress
+
+      - run:
+          name: install Node dependencies
+          command: npm ci
+
+      - run:
+          name: Run gulp linting
+          command: npm run lint:gulp
+
+      - run:
+          name: Run gulp tests
+          command: npm run test:gulp
+
+      - save_cache:
+          key: main-vendor-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+
+      - save_cache:
+          key: node-modules-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test_gulp
