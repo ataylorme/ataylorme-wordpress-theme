@@ -1,6 +1,6 @@
 defaults: &defaults
   docker:
-    - image: quay.io/pantheon-public/build-tools-ci:6.x
+    - image: circleci/php:7.3-node-browsers
   working_directory: ~/ataylorme-wordpress-theme
   environment:
     TZ: "/usr/share/zoneinfo/America/Los_Angeles"
