@@ -16,8 +16,11 @@ class Integration_Test_Case extends WP_UnitTestCase {
 
 	/**
 	 * Tears down the environment after each test.
+	 *
+	 * @return void
 	 */
-	public function tearDown() {
+	public function tearDown(): void
+	{
 
 		// Fix for core test suite removing 'html5' theme support after each test.
 		$html5_support = get_theme_support( 'html5' );

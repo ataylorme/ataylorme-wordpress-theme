@@ -28,8 +28,11 @@ class Component_Tests extends Unit_Test_Case {
 
 	/**
 	 * Sets up the environment before each test.
+	 *
+	 * @return void
 	 */
-	public function setUp() {
+	public function setUp(): void
+	{
 		parent::setUp();
 
 		$this->component = new Component();
@@ -82,8 +85,8 @@ class Component_Tests extends Unit_Test_Case {
 			->once();
 
 		Functions\expect( 'wp_script_add_data' )
-			->with( 'wp-rig-navigation', 'async', true )
-			->once();
+			->atLeast()
+			->times( 1 );
 
 		Functions\expect( 'wp_localize_script' )
 			->with( 'wp-rig-navigation', Mockery::any(), Mockery::any() )
