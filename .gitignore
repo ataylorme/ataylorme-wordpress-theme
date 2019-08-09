@@ -22,6 +22,7 @@
 /config/config.local.json
 !/tests/
 !/optional/
+!.circleci/
 
 !.babelrc
 !composer.json
