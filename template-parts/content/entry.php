@@ -25,8 +25,8 @@ namespace WP_Rig\WP_Rig;
 
 <?php
 if ( is_singular( get_post_type() ) ) {
-	// Show post navigation only when the post type is 'post' or has an archive.
-	if ( 'post' === get_post_type() || get_post_type_object( get_post_type() )->has_archive ) {
+	// Show post navigation only when the post type is 'post'.
+	if ( 'post' === get_post_type() ) {
 		the_post_navigation(
 			[
 				'prev_text' => '<div class="post-navigation-sub"><span>' . esc_html__( 'Previous:', 'wp-rig' ) . '</span></div>%title',
