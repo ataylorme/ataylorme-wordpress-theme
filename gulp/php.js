@@ -22,11 +22,14 @@ export function phpBeforeReplacementStream() {
 	return pipeline.obj( [
 		// Only code sniff PHP files if the debug setting is true
 		gulpPlugins.if(
-			config.dev.debug.phpcs,
+			( config.dev.debug.phpcs && ! isProd ),
 			gulpPlugins.phpcs( PHPCSOptions )
 		),
-		// Log all problems that were found.
-		gulpPlugins.phpcs.reporter( 'log' ),
+		gulpPlugins.if(
+			( config.dev.debug.phpcs && ! isProd ),
+			// Log all problems that were found.
+			gulpPlugins.phpcs.reporter( 'log' )
+		),
 	] );
 }
 
@@ -40,6 +43,7 @@ export default function php( done ) {
 		// Only do string replacements and save PHP files when building for production
 		return pump( [
 			src( paths.php.src ),
+			phpBeforeReplacementStream(),
 			getStringReplacementTasks(),
 			dest( paths.php.dest ),
 		], done );

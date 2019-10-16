@@ -24,8 +24,14 @@ export function scriptsBeforeReplacementStream() {
 			dest: paths.scripts.dest,
 			extra: [ paths.config.themeConfig ],
 		} ),
-		gulpPlugins.eslint(),
-		gulpPlugins.eslint.format(),
+		gulpPlugins.if(
+			( ! isProd ),
+			gulpPlugins.eslint()
+		),
+		gulpPlugins.if(
+			( ! isProd ),
+			gulpPlugins.eslint.format()
+		),
 	] );
 }
 

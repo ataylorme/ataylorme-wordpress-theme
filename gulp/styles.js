@@ -36,13 +36,19 @@ export function stylesBeforeReplacementStream() {
 			dest: paths.styles.dest,
 			extra: [ paths.config.themeConfig ],
 		} ),
-		gulpPlugins.phpcs( {
-			bin: `${ rootPath }/vendor/bin/phpcs`,
-			standard: 'WordPress',
-			warningSeverity: 0,
-		} ),
-		// Log all problems that were found.
-		gulpPlugins.phpcs.reporter( 'log' ),
+		gulpPlugins.if(
+			( ! isProd ),
+			gulpPlugins.phpcs( {
+				bin: `${ rootPath }/vendor/bin/phpcs`,
+				standard: 'WordPress',
+				warningSeverity: 0,
+			} )
+		),
+		gulpPlugins.if(
+			( ! isProd ),
+			// Log all problems that were found.
+			gulpPlugins.phpcs.reporter( 'log' ),
+		),
 	] );
 }
 
@@ -115,7 +121,7 @@ export function stylesAfterReplacementStream() {
 		] ),
 		gulpPlugins.postcss( postcssPlugins ),
 		gulpPlugins.if(
-			config.dev.debug.styles,
+			( config.dev.debug.styles && ! isProd ),
 			gulpPlugins.tabify( 2, true )
 		),
 		gulpPlugins.rename( {
