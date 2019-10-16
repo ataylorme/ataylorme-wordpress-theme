@@ -40,7 +40,6 @@ export default function php( done ) {
 		// Only do string replacements and save PHP files when building for production
 		return pump( [
 			src( paths.php.src ),
-			phpBeforeReplacementStream(),
 			getStringReplacementTasks(),
 			dest( paths.php.dest ),
 		], done );
