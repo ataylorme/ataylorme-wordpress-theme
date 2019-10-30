@@ -16,10 +16,12 @@ namespace WP_Rig\WP_Rig;
 	</header><!-- .page-header -->
 
 	<div class="page-content">
-		<?php
-		if ( function_exists( 'wp_service_worker_error_message_placeholder' ) ) {
-			wp_service_worker_error_message_placeholder();
-		}
-		?>
+		<div class="entry-content">
+			<?php
+			if ( function_exists( 'wp_service_worker_error_message_placeholder' ) ) {
+				wp_service_worker_error_message_placeholder();
+			}
+			?>
+		</div><!-- .entry-content -->
 	</div><!-- .page-content -->
 </section><!-- .error -->
