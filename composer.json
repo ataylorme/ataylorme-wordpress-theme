@@ -10,7 +10,7 @@
     "php": ">=7.0",
     "wp-coding-standards/wpcs": "^2",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.5",
-    "phpunit/phpunit": "^8",
+    "phpunit/phpunit": "^9",
     "brain/monkey": "^2",
     "phpcompatibility/php-compatibility": "^9"
   },
